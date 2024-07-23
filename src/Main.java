@@ -8,34 +8,34 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Do you want to count words or characters? (Enter 'words' or 'characters')");
+        System.out.print("Do you want to count words or characters? ");
         String countChoice = scanner.nextLine().trim().toLowerCase();
 
-        System.out.println("Do you want to count from a file or from your input? (Enter 'file' or 'input')");
+        System.out.print("Do you want to count from a file or from your input? ");
         String sourceChoice = scanner.nextLine().trim().toLowerCase();
 
         if ("file".equals(sourceChoice)) {
-            System.out.println("Enter the filename:");
+            System.out.print("Enter the filename or directory (followed by the file extension): ");
             String filename = scanner.nextLine().trim();
             if ("words".equals(countChoice)) {
                 countWordsInFile(filename);
             } else if ("characters".equals(countChoice)) {
                 countCharactersInFile(filename);
             } else {
-                System.out.println("Invalid count choice. Please enter 'words' or 'characters'.");
+                System.out.print("Invalid count choice. Please enter 'words' or 'characters'.");
             }
         } else if ("input".equals(sourceChoice)) {
-            System.out.println("Enter your text:");
+            System.out.print("Enter your text:");
             String userInput = scanner.nextLine();
             if ("words".equals(countChoice)) {
                 countWordsInString(userInput);
             } else if ("characters".equals(countChoice)) {
                 countCharactersInString(userInput);
             } else {
-                System.out.println("Invalid count choice. Please enter 'words' or 'characters'.");
+                System.out.print("Invalid count choice. Please enter 'words' or 'characters'.");
             }
         } else {
-            System.out.println("Invalid source choice. Please enter 'file' or 'input'.");
+            System.out.print("Invalid source choice. Please enter 'file' or 'input'.");
         }
 
         scanner.close();
